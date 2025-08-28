@@ -14,72 +14,104 @@
 
 <title>New-Models</title>
 
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
 
 
-<style type="text/css">code{white-space: pre;}</style>
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-  {  }
+{ }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -88,13 +120,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -102,6 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 })();
 </script>
+
 
 
 
@@ -301,213 +341,282 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<p>Usually, one creates a GOF-model-test-class via the function <em>GOF_model()</em>. But this function is actually a wrapper for the class <em>GOF_model_test</em>. That class needs other classes to work properly. In particular it uses the three interfaces <em>GOF_model_info_extractor</em>, <em>GOF_model_simulator</em>, <em>GOF_model_trainer</em>. In general, objects of class <em>lm</em> or <em>glm</em> can be used with <em>GOF_model</em>. However, there might be situations where one has to overwrite the default behavior. For instance, if you want to apply the methodology to new models or simply because a model fit returned by an R-package does not work properly with the GOF-package. Here we show how to implement the three interfaces for some concret cases.</p>
+<p>Usually, one creates a GOF-model-test-class via the function
+<em>GOF_model()</em>. But this function is actually a wrapper for the
+class <em>GOF_model_test</em>. That class needs other classes to work
+properly. In particular it uses the three interfaces
+<em>GOF_model_info_extractor</em>, <em>GOF_model_simulator</em>,
+<em>GOF_model_trainer</em>. In general, objects of class <em>lm</em> or
+<em>glm</em> can be used with <em>GOF_model</em>. However, there might
+be situations where one has to overwrite the default behavior. For
+instance, if you want to apply the methodology to new models or simply
+because a model fit returned by an R-package does not work properly with
+the GOF-package. Here we show how to implement the three interfaces for
+some concret cases.</p>
 <div id="least-square-estimates" class="section level1">
 <h1>Least square estimates</h1>
 <p>Assume we have such a model</p>
 <p><span class="math display">\[
 Y = m(\beta^\top X) + \epsilon
 \]</span></p>
-<p>without any knowledge about <span class="math inline">\(\epsilon\)</span>. Then we could try to estimate the <span class="math inline">\(\beta\)</span> using a least square estimate and using the GOF-package for check our fitted model. First we generate a data set</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(bootGOF)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">set.seed</span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">X =<span class="st"> </span><span class="kw">runif</span>(<span class="dt">n =</span> <span class="dv">200</span>, <span class="dt">min =</span> <span class="dv">6</span>, <span class="dt">max =</span> <span class="dv">14</span>)</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">d =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> X, <span class="dt">y =</span> <span class="kw">sin</span>(<span class="fl">0.5</span> <span class="op">*</span><span class="st"> </span>X) <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">200</span>, <span class="dt">sd =</span> <span class="fl">0.2</span>))</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">plot</span>(y<span class="op">~</span>x, <span class="dt">data =</span> d)</a></code></pre></div>
-<p><img src="data:image/png;base64,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" /><!-- --></p>
-<p>Lets have a short excursion at this point because the plot gives the impression that the following simple model might apply:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">wrong_model =<span class="st"> </span><span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span><span class="kw">I</span>(x<span class="op">^</span><span class="dv">2</span>), <span class="dt">data =</span> d)</a></code></pre></div>
+<p>without any knowledge about <span class="math inline">\(\epsilon\)</span>. Then we could try to estimate
+the <span class="math inline">\(\beta\)</span> using a least square
+estimate and using the GOF-package for check our fitted model. First we
+generate a data set</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(bootGOF)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">6</span>, <span class="at">max =</span> <span class="dv">14</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>d <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x =</span> X, <span class="at">y =</span> <span class="fu">sin</span>(<span class="fl">0.5</span> <span class="sc">*</span> X) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">200</span>, <span class="at">sd =</span> <span class="fl">0.2</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">plot</span>(y<span class="sc">~</span>x, <span class="at">data =</span> d)</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --></p>
+<p>Lets have a short excursion at this point because the plot gives the
+impression that the following simple model might apply:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>wrong_model <span class="ot">=</span> <span class="fu">lm</span>(y <span class="sc">~</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>), <span class="at">data =</span> d)</span></code></pre></div>
 <p>However, a goodness-of-fit-test rejects this model</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">mt &lt;-<span class="st"> </span><span class="kw">GOF_model</span>(</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="dt">data =</span> d,</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">  <span class="dt">model =</span> wrong_model,</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">  <span class="dt">simulator_type =</span> <span class="st">&quot;parametric&quot;</span>,</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5">  <span class="dt">nmb_boot_samples =</span> <span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">  <span class="dt">y_name =</span> <span class="st">&quot;y&quot;</span>,</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">  <span class="dt">Rn1_statistic =</span> Rn1_KS<span class="op">$</span><span class="kw">new</span>())</a>
-<a class="sourceLine" id="cb3-8" data-line-number="8">mt<span class="op">$</span><span class="kw">get_pvalue</span>()</a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; [1] 0</span></a></code></pre></div>
-<p>Note that in this simple case the standard diagnostic plots also reveal that this model is not a sufficient. Now we fit the model using a least square estimator:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">library</span>(minpack.lm)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">fit &lt;-<span class="st"> </span>minpack.lm<span class="op">::</span><span class="kw">nlsLM</span>(y <span class="op">~</span><span class="st"> </span><span class="kw">sin</span>(a <span class="op">*</span><span class="st"> </span>x),</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="dt">data =</span> d,</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="dt">start =</span> <span class="kw">c</span>(<span class="dt">a =</span> <span class="fl">0.5</span>),</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="dt">control =</span> <span class="kw">nls.control</span>(<span class="dt">maxiter =</span> <span class="dv">500</span>))</a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">fit</a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; Nonlinear regression model</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt;   model: y ~ sin(a * x)</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt;    data: d</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt;      a </span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; 0.4993 </span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt;  residual sum-of-squares: 7.873</span></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt; Number of iterations to convergence: 3 </span></a>
-<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt; Achieved convergence tolerance: 1.49e-08</span></a></code></pre></div>
-<p>In order to create a goodnes-of-fit-test using <em>GOF_model_test</em> we have to implement three interfaces. The first interface requires that we implement three functions <em>yhat</em>, <em>y_minus_yhat</em> and <em>beta_x_covariates</em>, which are the predictions for the dependent variable (also called target-variable), the residuals on the scale of the dependent variable and the inner product of the estimated parameters and the independent variables (also called covariates or features). However, the object returned by <em>minpack.lm::nlsLM</em> does not contain the original data set but that data set is necessary to calculate the inner product. Hence, we make a list that contains the model fit and the data that was used to fit the model.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">fit_and_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">fit =</span> fit, <span class="dt">data =</span> d)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>mt <span class="ot">&lt;-</span> <span class="fu">GOF_model</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="at">data =</span> d,</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="at">model =</span> wrong_model,</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  <span class="at">simulator_type =</span> <span class="st">&quot;parametric&quot;</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="at">nmb_boot_samples =</span> <span class="dv">100</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  <span class="at">y_name =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  <span class="at">Rn1_statistic =</span> Rn1_KS<span class="sc">$</span><span class="fu">new</span>())</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>mt<span class="sc">$</span><span class="fu">get_pvalue</span>()</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; [1] 0</span></span></code></pre></div>
+<p>Note that in this simple case the standard diagnostic plots also
+reveal that this model is not a sufficient. Now we fit the model using a
+least square estimator:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">library</span>(minpack.lm)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>fit <span class="ot">&lt;-</span> minpack.lm<span class="sc">::</span><span class="fu">nlsLM</span>(y <span class="sc">~</span> <span class="fu">sin</span>(a <span class="sc">*</span> x),</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  <span class="at">data =</span> d,</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  <span class="at">start =</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="fl">0.5</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">nls.control</span>(<span class="at">maxiter =</span> <span class="dv">500</span>))</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>fit</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; Nonlinear regression model</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;   model: y ~ sin(a * x)</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;    data: d</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt;      a </span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; 0.4993 </span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt;  residual sum-of-squares: 7.873</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; Number of iterations to convergence: 3 </span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; Achieved convergence tolerance: 1.49e-08</span></span></code></pre></div>
+<p>In order to create a goodnes-of-fit-test using
+<em>GOF_model_test</em> we have to implement three interfaces. The first
+interface requires that we implement three functions <em>yhat</em>,
+<em>y_minus_yhat</em> and <em>beta_x_covariates</em>, which are the
+predictions for the dependent variable (also called target-variable),
+the residuals on the scale of the dependent variable and the inner
+product of the estimated parameters and the independent variables (also
+called covariates or features). However, the object returned by
+<em>minpack.lm::nlsLM</em> does not contain the original data set but
+that data set is necessary to calculate the inner product. Hence, we
+make a list that contains the model fit and the data that was used to
+fit the model.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>fit_and_data <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">fit =</span> fit, <span class="at">data =</span> d)</span></code></pre></div>
 <p>Now we can implement the interface</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">library</span>(R6)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">my_nls_info_extractor &lt;-<span class="st"> </span>R6<span class="op">::</span><span class="kw">R6Class</span>(</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="dt">classname =</span> <span class="st">&quot;my_nls_info_extractor&quot;</span>,</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">  <span class="dt">inherit =</span> GOF_model_info_extractor,</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">  <span class="dt">public =</span> <span class="kw">list</span>(</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">    <span class="dt">yhat =</span> <span class="cf">function</span>(model) {</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">      <span class="kw">predict</span>(<span class="dt">object =</span> model<span class="op">$</span>fit)</a>
-<a class="sourceLine" id="cb6-8" data-line-number="8">    },</a>
-<a class="sourceLine" id="cb6-9" data-line-number="9">    <span class="dt">y_minus_yhat =</span> <span class="cf">function</span>(model) {</a>
-<a class="sourceLine" id="cb6-10" data-line-number="10">      <span class="kw">residuals</span>(<span class="dt">object =</span> model<span class="op">$</span>fit)</a>
-<a class="sourceLine" id="cb6-11" data-line-number="11">    },</a>
-<a class="sourceLine" id="cb6-12" data-line-number="12">    <span class="dt">beta_x_covariates =</span> <span class="cf">function</span>(model) {</a>
-<a class="sourceLine" id="cb6-13" data-line-number="13">      a_hat &lt;-<span class="st"> </span><span class="kw">coef</span>(<span class="dt">object =</span> model<span class="op">$</span>fit)</a>
-<a class="sourceLine" id="cb6-14" data-line-number="14">      x &lt;-<span class="st"> </span>model<span class="op">$</span>data<span class="op">$</span>x</a>
-<a class="sourceLine" id="cb6-15" data-line-number="15">      ret &lt;-<span class="st"> </span>a_hat <span class="op">*</span><span class="st"> </span>x</a>
-<a class="sourceLine" id="cb6-16" data-line-number="16">      <span class="kw">return</span>(ret)</a>
-<a class="sourceLine" id="cb6-17" data-line-number="17">    }</a>
-<a class="sourceLine" id="cb6-18" data-line-number="18">  ))</a>
-<a class="sourceLine" id="cb6-19" data-line-number="19">my_info_extractor &lt;-<span class="st"> </span>my_nls_info_extractor<span class="op">$</span><span class="kw">new</span>()</a></code></pre></div>
-<p>Implementing <em>yhat</em> and <em>y_minus_yhat</em> is straight forward using the function already offered by R but <em>beta_x_covariates</em> needs special attention. The reason is that <em>minpack.lm::nlsLM</em> can also fit very general models of the type <span class="math inline">\(m(\beta, X)\)</span>. Hence, there is now built-in-function to extract objects like <span class="math inline">\(\beta^\top X\)</span>. Lets look at the first few data points:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">head</span>(d)</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt;           x          y</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt; 1  8.124069 -0.9199426</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#&gt; 2  8.976991 -0.9666172</span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt; 3 10.582827 -1.0191812</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co">#&gt; 4 13.265662  0.3741709</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">#&gt; 5  7.613455 -0.7480823</span></a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="co">#&gt; 6 13.187117  0.6588717</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">library</span>(R6)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>my_nls_info_extractor <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>  <span class="at">classname =</span> <span class="st">&quot;my_nls_info_extractor&quot;</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  <span class="at">inherit =</span> GOF_model_info_extractor,</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    <span class="at">yhat =</span> <span class="cf">function</span>(model) {</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>      <span class="fu">predict</span>(<span class="at">object =</span> model<span class="sc">$</span>fit)</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>    },</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>    <span class="at">y_minus_yhat =</span> <span class="cf">function</span>(model) {</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>      <span class="fu">residuals</span>(<span class="at">object =</span> model<span class="sc">$</span>fit)</span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>    },</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>    <span class="at">beta_x_covariates =</span> <span class="cf">function</span>(model) {</span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a>      a_hat <span class="ot">&lt;-</span> <span class="fu">coef</span>(<span class="at">object =</span> model<span class="sc">$</span>fit)</span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>      x <span class="ot">&lt;-</span> model<span class="sc">$</span>data<span class="sc">$</span>x</span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>      ret <span class="ot">&lt;-</span> a_hat <span class="sc">*</span> x</span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>      <span class="fu">return</span>(ret)</span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a>    }</span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>  ))</span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a>my_info_extractor <span class="ot">&lt;-</span> my_nls_info_extractor<span class="sc">$</span><span class="fu">new</span>()</span></code></pre></div>
+<p>Implementing <em>yhat</em> and <em>y_minus_yhat</em> is straight
+forward using the function already offered by R but
+<em>beta_x_covariates</em> needs special attention. The reason is that
+<em>minpack.lm::nlsLM</em> can also fit very general models of the type
+<span class="math inline">\(m(\beta, X)\)</span>. Hence, there is now
+built-in-function to extract objects like <span class="math inline">\(\beta^\top X\)</span>. Lets look at the first few
+data points:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">head</span>(d)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co">#&gt;           x          y</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#&gt; 1  8.124069 -0.9199426</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt; 2  8.976991 -0.9666172</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; 3 10.582827 -1.0191812</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; 4 13.265662  0.3741709</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt; 5  7.613455 -0.7480823</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt; 6 13.187117  0.6588717</span></span></code></pre></div>
 <p>Now we are able to predict <span class="math inline">\(y\)</span>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">head</span>(my_info_extractor<span class="op">$</span><span class="kw">yhat</span>(<span class="dt">model =</span> fit_and_data))</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt; [1] -0.7926252 -0.9737135 -0.8407826  0.3343611 -0.6132205  0.2971500</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">head</span>(my_info_extractor<span class="sc">$</span><span class="fu">yhat</span>(<span class="at">model =</span> fit_and_data))</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt; [1] -0.7926252 -0.9737135 -0.8407826  0.3343611 -0.6132205  0.2971500</span></span></code></pre></div>
 <p>And calculate the difference between <span class="math inline">\(y\)</span> and our prediction:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">head</span>(my_info_extractor<span class="op">$</span><span class="kw">y_minus_yhat</span>(<span class="dt">model =</span> fit_and_data))</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; [1] -0.127317499  0.007096259 -0.178398577  0.039809752 -0.134861797</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co">#&gt; [6]  0.361721696</span></a></code></pre></div>
-<p>And based on the estimated coefficient we can calculate the inner product with <span class="math inline">\(x\)</span>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">head</span>(my_info_extractor<span class="op">$</span><span class="kw">beta_x_covariates</span>(<span class="dt">model =</span> fit_and_data))</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="co">#&gt; [1] 4.056695 4.482596 5.284458 6.624113 3.801724 6.584892</span></a></code></pre></div>
-<p>Since we did not make an assumption about the distribution of <span class="math inline">\(\epsilon\)</span> we cannot use a parametric resampling scheme. However, we can do a wild bootstrap that uses only the predictions and the residuals. The class <em>GOF_sim_wild_rademacher</em> implements this wild bootstrap but needs an info extractor to obtain the preditions and residuals:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">my_simulator &lt;-<span class="st"> </span>GOF_sim_wild_rademacher<span class="op">$</span><span class="kw">new</span>(</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2">  <span class="dt">gof_model_info_extractor =</span> my_info_extractor</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3">)</a></code></pre></div>
-<p>This class generates as many observations (according to the fitted model) as are contained in the data set used to fit the model.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">head</span>(my_info_extractor<span class="sc">$</span><span class="fu">y_minus_yhat</span>(<span class="at">model =</span> fit_and_data))</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="co">#&gt; [1] -0.127317499  0.007096259 -0.178398577  0.039809752 -0.134861797</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co">#&gt; [6]  0.361721696</span></span></code></pre></div>
+<p>And based on the estimated coefficient we can calculate the inner
+product with <span class="math inline">\(x\)</span>:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">head</span>(my_info_extractor<span class="sc">$</span><span class="fu">beta_x_covariates</span>(<span class="at">model =</span> fit_and_data))</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co">#&gt; [1] 4.056695 4.482596 5.284458 6.624113 3.801724 6.584892</span></span></code></pre></div>
+<p>Since we did not make an assumption about the distribution of <span class="math inline">\(\epsilon\)</span> we cannot use a parametric
+resampling scheme. However, we can do a wild bootstrap that uses only
+the predictions and the residuals. The class
+<em>GOF_sim_wild_rademacher</em> implements this wild bootstrap but
+needs an info extractor to obtain the preditions and residuals:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>my_simulator <span class="ot">&lt;-</span> GOF_sim_wild_rademacher<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="at">gof_model_info_extractor =</span> my_info_extractor</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>)</span></code></pre></div>
+<p>This class generates as many observations (according to the fitted
+model) as are contained in the data set used to fit the model.</p>
 <p>Again looking at first at the original data points:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">head</span>(d)</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co">#&gt;           x          y</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">#&gt; 1  8.124069 -0.9199426</span></a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="co">#&gt; 2  8.976991 -0.9666172</span></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co">#&gt; 3 10.582827 -1.0191812</span></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co">#&gt; 4 13.265662  0.3741709</span></a>
-<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co">#&gt; 5  7.613455 -0.7480823</span></a>
-<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="co">#&gt; 6 13.187117  0.6588717</span></a></code></pre></div>
-<p>Now lets look at new <span class="math inline">\(y\)</span>s generated according to the fitted model, i.e. following a negative binomial distribution subject to the independent variables:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">head</span>(my_simulator<span class="op">$</span><span class="kw">resample_y</span>(<span class="dt">model =</span> fit_and_data))</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="co">#&gt; [1] -0.6653077 -0.9808097 -1.0191812  0.3741709 -0.4783588  0.6588717</span></a></code></pre></div>
-<p>Note that the resampled <span class="math inline">\(y\)</span>’s sometimes equal the observed <span class="math inline">\(y\)</span>. The reason is that the this wild bootstrap performs ‘predictions +/- residual’ and only the sign is drawn at random.</p>
-<p>Finally, we need to implement the interface <em>GOF_model_trainer</em> which requires a function <em>refit</em> that is able to update the model object by refitting it to a new data set. R already provides the necessary function, i.e. <em>stats::update</em>. However we combined the fitted model with the data set in a list and we need to take into account:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">my_nls_trainer &lt;-<span class="st"> </span>R6<span class="op">::</span><span class="kw">R6Class</span>(</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">  <span class="dt">classname =</span> <span class="st">&quot;GOF_nls_trainer&quot;</span>,</a>
-<a class="sourceLine" id="cb14-3" data-line-number="3">  <span class="dt">inherit =</span> GOF_model_trainer,</a>
-<a class="sourceLine" id="cb14-4" data-line-number="4">  <span class="dt">public =</span> <span class="kw">list</span>(</a>
-<a class="sourceLine" id="cb14-5" data-line-number="5">    <span class="dt">refit =</span> <span class="cf">function</span>(model, data) {</a>
-<a class="sourceLine" id="cb14-6" data-line-number="6">      fit &lt;-<span class="st"> </span><span class="kw">update</span>(<span class="dt">object =</span> model<span class="op">$</span>fit, <span class="dt">data =</span> data)</a>
-<a class="sourceLine" id="cb14-7" data-line-number="7">      ret &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">fit =</span> fit, <span class="dt">data =</span> data)</a>
-<a class="sourceLine" id="cb14-8" data-line-number="8">      <span class="kw">return</span>(ret)</a>
-<a class="sourceLine" id="cb14-9" data-line-number="9">    }))</a>
-<a class="sourceLine" id="cb14-10" data-line-number="10">my_trainer &lt;-<span class="st"> </span>my_nls_trainer<span class="op">$</span><span class="kw">new</span>()</a></code></pre></div>
-<p>This implementation basically equals the implementation of <em>GOF_lm/glm/_trainer</em>. The only difference is that we again store the data with the fit because <em>nlsLM()</em> doesn’t do it for us.</p>
-<p>Of course, fitting the model again to the original data set results in the same fitted model. With the defined classes we can now easily generate a new data set and refit the model to that new data set.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">new_data &lt;-<span class="st"> </span>d</a>
-<a class="sourceLine" id="cb15-2" data-line-number="2">new_data<span class="op">$</span>y &lt;-<span class="st"> </span>my_simulator<span class="op">$</span><span class="kw">resample_y</span>(<span class="dt">model =</span> fit_and_data)</a>
-<a class="sourceLine" id="cb15-3" data-line-number="3">my_trainer<span class="op">$</span><span class="kw">refit</span>(<span class="dt">model =</span> fit_and_data, <span class="dt">data =</span> new_data)<span class="op">$</span>fit</a>
-<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="co">#&gt; Nonlinear regression model</span></a>
-<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="co">#&gt;   model: y ~ sin(a * x)</span></a>
-<a class="sourceLine" id="cb15-6" data-line-number="6"><span class="co">#&gt;    data: data</span></a>
-<a class="sourceLine" id="cb15-7" data-line-number="7"><span class="co">#&gt;      a </span></a>
-<a class="sourceLine" id="cb15-8" data-line-number="8"><span class="co">#&gt; 0.4997 </span></a>
-<a class="sourceLine" id="cb15-9" data-line-number="9"><span class="co">#&gt;  residual sum-of-squares: 7.871</span></a>
-<a class="sourceLine" id="cb15-10" data-line-number="10"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb15-11" data-line-number="11"><span class="co">#&gt; Number of iterations to convergence: 2 </span></a>
-<a class="sourceLine" id="cb15-12" data-line-number="12"><span class="co">#&gt; Achieved convergence tolerance: 1.49e-08</span></a></code></pre></div>
-<p>Now all ingredients are available for applying the Goodness-of-Fit test:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb16-2" data-line-number="2">mt &lt;-<span class="st"> </span>GOF_model_test<span class="op">$</span><span class="kw">new</span>(</a>
-<a class="sourceLine" id="cb16-3" data-line-number="3">  <span class="dt">model =</span> fit_and_data,</a>
-<a class="sourceLine" id="cb16-4" data-line-number="4">  <span class="dt">data =</span> d,</a>
-<a class="sourceLine" id="cb16-5" data-line-number="5">  <span class="dt">nmb_boot_samples =</span> <span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb16-6" data-line-number="6">  <span class="dt">y_name =</span> <span class="st">&quot;y&quot;</span>,</a>
-<a class="sourceLine" id="cb16-7" data-line-number="7">  <span class="dt">Rn1_statistic =</span> Rn1_CvM<span class="op">$</span><span class="kw">new</span>(),</a>
-<a class="sourceLine" id="cb16-8" data-line-number="8">  <span class="dt">gof_model_info_extractor =</span> my_info_extractor,</a>
-<a class="sourceLine" id="cb16-9" data-line-number="9">  <span class="dt">gof_model_resample =</span> GOF_model_resample<span class="op">$</span><span class="kw">new</span>(</a>
-<a class="sourceLine" id="cb16-10" data-line-number="10">    <span class="dt">gof_model_simulator =</span> my_simulator,</a>
-<a class="sourceLine" id="cb16-11" data-line-number="11">    <span class="dt">gof_model_trainer =</span> my_trainer</a>
-<a class="sourceLine" id="cb16-12" data-line-number="12">  )</a>
-<a class="sourceLine" id="cb16-13" data-line-number="13">)</a>
-<a class="sourceLine" id="cb16-14" data-line-number="14">mt<span class="op">$</span><span class="kw">get_pvalue</span>()</a>
-<a class="sourceLine" id="cb16-15" data-line-number="15"><span class="co">#&gt; [1] 0.8</span></a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">head</span>(d)</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co">#&gt;           x          y</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co">#&gt; 1  8.124069 -0.9199426</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co">#&gt; 2  8.976991 -0.9666172</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#&gt; 3 10.582827 -1.0191812</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#&gt; 4 13.265662  0.3741709</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#&gt; 5  7.613455 -0.7480823</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#&gt; 6 13.187117  0.6588717</span></span></code></pre></div>
+<p>Now lets look at new <span class="math inline">\(y\)</span>s
+generated according to the fitted model, i.e. following a negative
+binomial distribution subject to the independent variables:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">head</span>(my_simulator<span class="sc">$</span><span class="fu">resample_y</span>(<span class="at">model =</span> fit_and_data))</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="co">#&gt; [1] -0.6653077 -0.9808097 -1.0191812  0.3741709 -0.4783588  0.6588717</span></span></code></pre></div>
+<p>Note that the resampled <span class="math inline">\(y\)</span>’s
+sometimes equal the observed <span class="math inline">\(y\)</span>. The
+reason is that the this wild bootstrap performs ‘predictions +/-
+residual’ and only the sign is drawn at random.</p>
+<p>Finally, we need to implement the interface
+<em>GOF_model_trainer</em> which requires a function <em>refit</em> that
+is able to update the model object by refitting it to a new data set. R
+already provides the necessary function, i.e. <em>stats::update</em>.
+However we combined the fitted model with the data set in a list and we
+need to take into account:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>my_nls_trainer <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="at">classname =</span> <span class="st">&quot;GOF_nls_trainer&quot;</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="at">inherit =</span> GOF_model_trainer,</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>    <span class="at">refit =</span> <span class="cf">function</span>(model, data) {</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>      fit <span class="ot">&lt;-</span> <span class="fu">update</span>(<span class="at">object =</span> model<span class="sc">$</span>fit, <span class="at">data =</span> data)</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>      ret <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">fit =</span> fit, <span class="at">data =</span> data)</span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>      <span class="fu">return</span>(ret)</span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>    }))</span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>my_trainer <span class="ot">&lt;-</span> my_nls_trainer<span class="sc">$</span><span class="fu">new</span>()</span></code></pre></div>
+<p>This implementation basically equals the implementation of
+<em>GOF_lm/glm/_trainer</em>. The only difference is that we again store
+the data with the fit because <em>nlsLM()</em> doesn’t do it for us.</p>
+<p>Of course, fitting the model again to the original data set results
+in the same fitted model. With the defined classes we can now easily
+generate a new data set and refit the model to that new data set.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> d</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>new_data<span class="sc">$</span>y <span class="ot">&lt;-</span> my_simulator<span class="sc">$</span><span class="fu">resample_y</span>(<span class="at">model =</span> fit_and_data)</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>my_trainer<span class="sc">$</span><span class="fu">refit</span>(<span class="at">model =</span> fit_and_data, <span class="at">data =</span> new_data)<span class="sc">$</span>fit</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="co">#&gt; Nonlinear regression model</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="co">#&gt;   model: y ~ sin(a * x)</span></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="co">#&gt;    data: data</span></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="co">#&gt;      a </span></span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a><span class="co">#&gt; 0.4997 </span></span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a><span class="co">#&gt;  residual sum-of-squares: 7.871</span></span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a><span class="co">#&gt; Number of iterations to convergence: 2 </span></span>
+<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a><span class="co">#&gt; Achieved convergence tolerance: 1.49e-08</span></span></code></pre></div>
+<p>Now all ingredients are available for applying the Goodness-of-Fit
+test:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>mt <span class="ot">&lt;-</span> GOF_model_test<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="at">model =</span> fit_and_data,</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>  <span class="at">data =</span> d,</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>  <span class="at">nmb_boot_samples =</span> <span class="dv">100</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>  <span class="at">y_name =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>  <span class="at">Rn1_statistic =</span> Rn1_CvM<span class="sc">$</span><span class="fu">new</span>(),</span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>  <span class="at">gof_model_info_extractor =</span> my_info_extractor,</span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>  <span class="at">gof_model_resample =</span> GOF_model_resample<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>    <span class="at">gof_model_simulator =</span> my_simulator,</span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>    <span class="at">gof_model_trainer =</span> my_trainer</span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a>  )</span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a>)</span>
+<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a>mt<span class="sc">$</span><span class="fu">get_pvalue</span>()</span>
+<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a><span class="co">#&gt; [1] 0.8</span></span></code></pre></div>
 </div>
 <div id="negative-binomial-using-the-mass-package" class="section level1">
 <h1>Negative Binomial using the MASS-package</h1>
-<p>A negative binomial model is a generalized linear model. Furthermore, within R MASS::glm.nb returns an object of class <em>glm</em> and this package actually can process <em>glm</em>-classes. However, MASS::glm.nb seems to have a bug that prevents to propoerly update/refit such an object via the stats::update() function. We briefly illustrate this using an artificial data set:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">library</span>(MASS)</a>
-<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="kw">set.seed</span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb17-3" data-line-number="3">X1 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb17-4" data-line-number="4">X2 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb17-5" data-line-number="5">d &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb17-6" data-line-number="6">  <span class="dt">y =</span> MASS<span class="op">::</span><span class="kw">rnegbin</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">mu =</span> <span class="kw">exp</span>(<span class="fl">0.2</span> <span class="op">+</span><span class="st"> </span>X1 <span class="op">*</span><span class="st"> </span><span class="fl">0.2</span> <span class="op">+</span><span class="st"> </span>X2 <span class="op">*</span><span class="st"> </span><span class="fl">0.6</span>), <span class="dt">theta =</span> <span class="dv">2</span>),</a>
-<a class="sourceLine" id="cb17-7" data-line-number="7">  <span class="dt">x1 =</span> X1,</a>
-<a class="sourceLine" id="cb17-8" data-line-number="8">  <span class="dt">x2 =</span> X2)</a>
-<a class="sourceLine" id="cb17-9" data-line-number="9">fit &lt;-<span class="st"> </span>MASS<span class="op">::</span><span class="kw">glm.nb</span>(y<span class="op">~</span>x1<span class="op">+</span>x2, <span class="dt">data =</span> d)</a>
-<a class="sourceLine" id="cb17-10" data-line-number="10">fit</a>
-<a class="sourceLine" id="cb17-11" data-line-number="11"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="co">#&gt; Call:  MASS::glm.nb(formula = y ~ x1 + x2, data = d, init.theta = 1.561918046, </span></a>
-<a class="sourceLine" id="cb17-13" data-line-number="13"><span class="co">#&gt;     link = log)</span></a>
-<a class="sourceLine" id="cb17-14" data-line-number="14"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb17-15" data-line-number="15"><span class="co">#&gt; Coefficients:</span></a>
-<a class="sourceLine" id="cb17-16" data-line-number="16"><span class="co">#&gt; (Intercept)           x1           x2  </span></a>
-<a class="sourceLine" id="cb17-17" data-line-number="17"><span class="co">#&gt;      0.1905       0.1532       0.7696  </span></a>
-<a class="sourceLine" id="cb17-18" data-line-number="18"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb17-19" data-line-number="19"><span class="co">#&gt; Degrees of Freedom: 99 Total (i.e. Null);  97 Residual</span></a>
-<a class="sourceLine" id="cb17-20" data-line-number="20"><span class="co">#&gt; Null Deviance:       144.3 </span></a>
-<a class="sourceLine" id="cb17-21" data-line-number="21"><span class="co">#&gt; Residual Deviance: 102.4     AIC: 317.5</span></a></code></pre></div>
-<p>Note that fit-object shows that the call contained the parameter <em>init.theta</em> which obviously was not provided by us. The problem is that this <em>init.theta</em> parameter is used by <em>stats::update</em> during refitting resampled data. So fitting resampled data and fitting the original data is slightly different from the perspective of the fitting algorithm. To circumvent this problem we can reimplement the corresponding interface as follows:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">my_negbin_trainer &lt;-<span class="st"> </span>R6<span class="op">::</span><span class="kw">R6Class</span>(</a>
-<a class="sourceLine" id="cb18-2" data-line-number="2">  <span class="dt">classname =</span> <span class="st">&quot;GOF_glmnb_trainer&quot;</span>,</a>
-<a class="sourceLine" id="cb18-3" data-line-number="3">  <span class="dt">inherit =</span> GOF_model_trainer,</a>
-<a class="sourceLine" id="cb18-4" data-line-number="4">  <span class="dt">public =</span> <span class="kw">list</span>(</a>
-<a class="sourceLine" id="cb18-5" data-line-number="5">    <span class="dt">refit =</span> <span class="cf">function</span>(model, data) {</a>
-<a class="sourceLine" id="cb18-6" data-line-number="6">      MASS<span class="op">::</span><span class="kw">glm.nb</span>(<span class="dt">formula =</span> <span class="kw">formula</span>(model), <span class="dt">data =</span> data)</a>
-<a class="sourceLine" id="cb18-7" data-line-number="7">    }))</a></code></pre></div>
-<p>This way we ensure that the original data set and resampled data set are fitted in the same way. Now we can create the GOF-test-class using this new refitting-class</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb19-2" data-line-number="2">mt &lt;-<span class="st"> </span>GOF_model_test<span class="op">$</span><span class="kw">new</span>(</a>
-<a class="sourceLine" id="cb19-3" data-line-number="3">  <span class="dt">model =</span> fit,</a>
-<a class="sourceLine" id="cb19-4" data-line-number="4">  <span class="dt">data =</span> d,</a>
-<a class="sourceLine" id="cb19-5" data-line-number="5">  <span class="dt">nmb_boot_samples =</span> <span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb19-6" data-line-number="6">  <span class="dt">y_name =</span> <span class="st">&quot;y&quot;</span>,</a>
-<a class="sourceLine" id="cb19-7" data-line-number="7">  <span class="dt">Rn1_statistic =</span> Rn1_CvM<span class="op">$</span><span class="kw">new</span>(),</a>
-<a class="sourceLine" id="cb19-8" data-line-number="8">  <span class="dt">gof_model_info_extractor =</span> GOF_glm_info_extractor<span class="op">$</span><span class="kw">new</span>(),</a>
-<a class="sourceLine" id="cb19-9" data-line-number="9">  <span class="dt">gof_model_resample =</span> GOF_model_resample<span class="op">$</span><span class="kw">new</span>(</a>
-<a class="sourceLine" id="cb19-10" data-line-number="10">    <span class="dt">gof_model_simulator =</span> GOF_glm_sim_param<span class="op">$</span><span class="kw">new</span>(),</a>
-<a class="sourceLine" id="cb19-11" data-line-number="11">    <span class="dt">gof_model_trainer =</span> my_negbin_trainer<span class="op">$</span><span class="kw">new</span>()</a>
-<a class="sourceLine" id="cb19-12" data-line-number="12">  )</a>
-<a class="sourceLine" id="cb19-13" data-line-number="13">)</a>
-<a class="sourceLine" id="cb19-14" data-line-number="14">mt<span class="op">$</span><span class="kw">get_pvalue</span>()</a>
-<a class="sourceLine" id="cb19-15" data-line-number="15"><span class="co">#&gt; [1] 0.36</span></a></code></pre></div>
+<p>A negative binomial model is a generalized linear model. Furthermore,
+within R MASS::glm.nb returns an object of class <em>glm</em> and this
+package actually can process <em>glm</em>-classes. However, MASS::glm.nb
+seems to have a bug that prevents to propoerly update/refit such an
+object via the stats::update() function. We briefly illustrate this
+using an artificial data set:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>X1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>X2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>  <span class="at">y =</span> MASS<span class="sc">::</span><span class="fu">rnegbin</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">mu =</span> <span class="fu">exp</span>(<span class="fl">0.2</span> <span class="sc">+</span> X1 <span class="sc">*</span> <span class="fl">0.2</span> <span class="sc">+</span> X2 <span class="sc">*</span> <span class="fl">0.6</span>), <span class="at">theta =</span> <span class="dv">2</span>),</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>  <span class="at">x1 =</span> X1,</span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>  <span class="at">x2 =</span> X2)</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>fit <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">glm.nb</span>(y<span class="sc">~</span>x1<span class="sc">+</span>x2, <span class="at">data =</span> d)</span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>fit</span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a><span class="co">#&gt; Call:  MASS::glm.nb(formula = y ~ x1 + x2, data = d, init.theta = 1.561918046, </span></span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a><span class="co">#&gt;     link = log)</span></span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a><span class="co">#&gt; Coefficients:</span></span>
+<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a><span class="co">#&gt; (Intercept)           x1           x2  </span></span>
+<span id="cb17-17"><a href="#cb17-17" tabindex="-1"></a><span class="co">#&gt;      0.1905       0.1532       0.7696  </span></span>
+<span id="cb17-18"><a href="#cb17-18" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb17-19"><a href="#cb17-19" tabindex="-1"></a><span class="co">#&gt; Degrees of Freedom: 99 Total (i.e. Null);  97 Residual</span></span>
+<span id="cb17-20"><a href="#cb17-20" tabindex="-1"></a><span class="co">#&gt; Null Deviance:       144.3 </span></span>
+<span id="cb17-21"><a href="#cb17-21" tabindex="-1"></a><span class="co">#&gt; Residual Deviance: 102.4     AIC: 317.5</span></span></code></pre></div>
+<p>Note that fit-object shows that the call contained the parameter
+<em>init.theta</em> which obviously was not provided by us. The problem
+is that this <em>init.theta</em> parameter is used by
+<em>stats::update</em> during refitting resampled data. So fitting
+resampled data and fitting the original data is slightly different from
+the perspective of the fitting algorithm. To circumvent this problem we
+can reimplement the corresponding interface as follows:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>my_negbin_trainer <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>  <span class="at">classname =</span> <span class="st">&quot;GOF_glmnb_trainer&quot;</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>  <span class="at">inherit =</span> GOF_model_trainer,</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>    <span class="at">refit =</span> <span class="cf">function</span>(model, data) {</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>      MASS<span class="sc">::</span><span class="fu">glm.nb</span>(<span class="at">formula =</span> <span class="fu">formula</span>(model), <span class="at">data =</span> data)</span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>    }))</span></code></pre></div>
+<p>This way we ensure that the original data set and resampled data set
+are fitted in the same way. Now we can create the GOF-test-class using
+this new refitting-class</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>mt <span class="ot">&lt;-</span> GOF_model_test<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>  <span class="at">model =</span> fit,</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>  <span class="at">data =</span> d,</span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>  <span class="at">nmb_boot_samples =</span> <span class="dv">100</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>  <span class="at">y_name =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a>  <span class="at">Rn1_statistic =</span> Rn1_CvM<span class="sc">$</span><span class="fu">new</span>(),</span>
+<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a>  <span class="at">gof_model_info_extractor =</span> GOF_glm_info_extractor<span class="sc">$</span><span class="fu">new</span>(),</span>
+<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a>  <span class="at">gof_model_resample =</span> GOF_model_resample<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a>    <span class="at">gof_model_simulator =</span> GOF_glm_sim_param<span class="sc">$</span><span class="fu">new</span>(),</span>
+<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a>    <span class="at">gof_model_trainer =</span> my_negbin_trainer<span class="sc">$</span><span class="fu">new</span>()</span>
+<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a>  )</span>
+<span id="cb19-13"><a href="#cb19-13" tabindex="-1"></a>)</span>
+<span id="cb19-14"><a href="#cb19-14" tabindex="-1"></a>mt<span class="sc">$</span><span class="fu">get_pvalue</span>()</span>
+<span id="cb19-15"><a href="#cb19-15" tabindex="-1"></a><span class="co">#&gt; [1] 0.36</span></span></code></pre></div>
 <p>Lets compare the result with the default GOF-test for glm’s</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb20-2" data-line-number="2">mt2 &lt;-<span class="st"> </span><span class="kw">GOF_model</span>(</a>
-<a class="sourceLine" id="cb20-3" data-line-number="3">  <span class="dt">model =</span> fit,</a>
-<a class="sourceLine" id="cb20-4" data-line-number="4">  <span class="dt">data =</span> d,</a>
-<a class="sourceLine" id="cb20-5" data-line-number="5">  <span class="dt">nmb_boot_samples =</span> <span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb20-6" data-line-number="6">  <span class="dt">simulator_type =</span> <span class="st">&quot;parametric&quot;</span>,</a>
-<a class="sourceLine" id="cb20-7" data-line-number="7">  <span class="dt">y_name =</span> <span class="st">&quot;y&quot;</span>,</a>
-<a class="sourceLine" id="cb20-8" data-line-number="8">  <span class="dt">Rn1_statistic =</span> Rn1_CvM<span class="op">$</span><span class="kw">new</span>()</a>
-<a class="sourceLine" id="cb20-9" data-line-number="9">)</a>
-<a class="sourceLine" id="cb20-10" data-line-number="10"><span class="co">#&gt; Warning in GOF_model(model = fit, data = d, nmb_boot_samples = 100,</span></a>
-<a class="sourceLine" id="cb20-11" data-line-number="11"><span class="co">#&gt; simulator_type = &quot;parametric&quot;, : The GOF-test requires to refit the model.</span></a>
-<a class="sourceLine" id="cb20-12" data-line-number="12"><span class="co">#&gt; Refitting MASS::glm.nb can be problematic, see vignette New-Models</span></a>
-<a class="sourceLine" id="cb20-13" data-line-number="13">mt2<span class="op">$</span><span class="kw">get_pvalue</span>()</a>
-<a class="sourceLine" id="cb20-14" data-line-number="14"><span class="co">#&gt; [1] 0.36</span></a></code></pre></div>
-<p>In this case the p-values do not differ. However, it could be different in other settings.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>mt2 <span class="ot">&lt;-</span> <span class="fu">GOF_model</span>(</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>  <span class="at">model =</span> fit,</span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>  <span class="at">data =</span> d,</span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>  <span class="at">nmb_boot_samples =</span> <span class="dv">100</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a>  <span class="at">simulator_type =</span> <span class="st">&quot;parametric&quot;</span>,</span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a>  <span class="at">y_name =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a>  <span class="at">Rn1_statistic =</span> Rn1_CvM<span class="sc">$</span><span class="fu">new</span>()</span>
+<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a>)</span>
+<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a><span class="co">#&gt; Warning in GOF_model(model = fit, data = d, nmb_boot_samples = 100,</span></span>
+<span id="cb20-11"><a href="#cb20-11" tabindex="-1"></a><span class="co">#&gt; simulator_type = &quot;parametric&quot;, : The GOF-test requires to refit the model.</span></span>
+<span id="cb20-12"><a href="#cb20-12" tabindex="-1"></a><span class="co">#&gt; Refitting MASS::glm.nb can be problematic, see vignette New-Models</span></span>
+<span id="cb20-13"><a href="#cb20-13" tabindex="-1"></a>mt2<span class="sc">$</span><span class="fu">get_pvalue</span>()</span>
+<span id="cb20-14"><a href="#cb20-14" tabindex="-1"></a><span class="co">#&gt; [1] 0.36</span></span></code></pre></div>
+<p>In this case the p-values do not differ. However, it could be
+different in other settings.</p>
 </div>
 
 

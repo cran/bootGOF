@@ -10,13 +10,13 @@ refits an object of class "lm" to a new data set
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-refit}{\code{GOF_lm_trainer$refit()}}
-\item \href{#method-clone}{\code{GOF_lm_trainer$clone()}}
+\item \href{#method-GOF_lm_trainer-refit}{\code{GOF_lm_trainer$refit()}}
+\item \href{#method-GOF_lm_trainer-clone}{\code{GOF_lm_trainer$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-refit"></a>}}
-\if{latex}{\out{\hypertarget{method-refit}{}}}
+\if{html}{\out{<a id="method-GOF_lm_trainer-refit"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_lm_trainer-refit}{}}}
 \subsection{Method \code{refit()}}{
 see \link{GOF_model_trainer}
 \subsection{Usage}{
@@ -37,8 +37,8 @@ see \link{GOF_model_trainer}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-GOF_lm_trainer-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_lm_trainer-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

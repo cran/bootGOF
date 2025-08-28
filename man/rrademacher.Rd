@@ -15,3 +15,4 @@ vector of values following the Rademacher distribution
 \description{
 Generates Rademacher distributed random variables
 }
+\keyword{internal}

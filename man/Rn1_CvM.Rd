@@ -13,19 +13,13 @@ Implements the "interface" Rn1_statistic
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-calc_statistic}{\code{Rn1_CvM$calc_statistic()}}
-\item \href{#method-clone}{\code{Rn1_CvM$clone()}}
+\item \href{#method-Rn1_CvM-calc_statistic}{\code{Rn1_CvM$calc_statistic()}}
+\item \href{#method-Rn1_CvM-clone}{\code{Rn1_CvM$clone()}}
 }
-}
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-}
-\out{</details>}
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-calc_statistic"></a>}}
-\if{latex}{\out{\hypertarget{method-calc_statistic}{}}}
+\if{html}{\out{<a id="method-Rn1_CvM-calc_statistic"></a>}}
+\if{latex}{\out{\hypertarget{method-Rn1_CvM-calc_statistic}{}}}
 \subsection{Method \code{calc_statistic()}}{
 calculates the calculates the Cramer-von-Mises
   statistic
@@ -45,8 +39,8 @@ see \link{Rn1_statistic}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-Rn1_CvM-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Rn1_CvM-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

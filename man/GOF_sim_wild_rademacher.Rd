@@ -12,14 +12,14 @@ the residuals from the fitted values.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{GOF_sim_wild_rademacher$new()}}
-\item \href{#method-resample_y}{\code{GOF_sim_wild_rademacher$resample_y()}}
-\item \href{#method-clone}{\code{GOF_sim_wild_rademacher$clone()}}
+\item \href{#method-GOF_sim_wild_rademacher-new}{\code{GOF_sim_wild_rademacher$new()}}
+\item \href{#method-GOF_sim_wild_rademacher-resample_y}{\code{GOF_sim_wild_rademacher$resample_y()}}
+\item \href{#method-GOF_sim_wild_rademacher-clone}{\code{GOF_sim_wild_rademacher$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-GOF_sim_wild_rademacher-new"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_sim_wild_rademacher-new}{}}}
 \subsection{Method \code{new()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{GOF_sim_wild_rademacher$new(gof_model_info_extractor)}\if{html}{\out{</div>}}
@@ -35,8 +35,8 @@ to derive the residuals and fitted values for resampling.}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-resample_y"></a>}}
-\if{latex}{\out{\hypertarget{method-resample_y}{}}}
+\if{html}{\out{<a id="method-GOF_sim_wild_rademacher-resample_y"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_sim_wild_rademacher-resample_y}{}}}
 \subsection{Method \code{resample_y()}}{
 a wild bootstrap using Rademacher random
   variables to resample the dependent variable
@@ -56,8 +56,8 @@ see \link{GOF_model_simulator}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-GOF_sim_wild_rademacher-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_sim_wild_rademacher-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

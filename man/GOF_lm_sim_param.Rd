@@ -13,13 +13,13 @@ after the classical linear model was fitted the
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-resample_y}{\code{GOF_lm_sim_param$resample_y()}}
-\item \href{#method-clone}{\code{GOF_lm_sim_param$clone()}}
+\item \href{#method-GOF_lm_sim_param-resample_y}{\code{GOF_lm_sim_param$resample_y()}}
+\item \href{#method-GOF_lm_sim_param-clone}{\code{GOF_lm_sim_param$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-resample_y"></a>}}
-\if{latex}{\out{\hypertarget{method-resample_y}{}}}
+\if{html}{\out{<a id="method-GOF_lm_sim_param-resample_y"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_lm_sim_param-resample_y}{}}}
 \subsection{Method \code{resample_y()}}{
 generates/resamples the dependent variables based
   on the parameteric nature defined by \code{model}
@@ -39,8 +39,8 @@ see \link{GOF_model_simulator}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-GOF_lm_sim_param-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_lm_sim_param-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

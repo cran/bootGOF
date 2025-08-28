@@ -14,21 +14,15 @@ This class is specialized in extracting various information
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-yhat}{\code{GOF_lm_info_extractor$yhat()}}
-\item \href{#method-y_minus_yhat}{\code{GOF_lm_info_extractor$y_minus_yhat()}}
-\item \href{#method-beta_x_covariates}{\code{GOF_lm_info_extractor$beta_x_covariates()}}
-\item \href{#method-clone}{\code{GOF_lm_info_extractor$clone()}}
+\item \href{#method-GOF_lm_info_extractor-yhat}{\code{GOF_lm_info_extractor$yhat()}}
+\item \href{#method-GOF_lm_info_extractor-y_minus_yhat}{\code{GOF_lm_info_extractor$y_minus_yhat()}}
+\item \href{#method-GOF_lm_info_extractor-beta_x_covariates}{\code{GOF_lm_info_extractor$beta_x_covariates()}}
+\item \href{#method-GOF_lm_info_extractor-clone}{\code{GOF_lm_info_extractor$clone()}}
 }
-}
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-}
-\out{</details>}
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-yhat"></a>}}
-\if{latex}{\out{\hypertarget{method-yhat}{}}}
+\if{html}{\out{<a id="method-GOF_lm_info_extractor-yhat"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_lm_info_extractor-yhat}{}}}
 \subsection{Method \code{yhat()}}{
 see \link{GOF_model_info_extractor}
 \subsection{Usage}{
@@ -47,8 +41,8 @@ see \link{GOF_model_info_extractor}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-y_minus_yhat"></a>}}
-\if{latex}{\out{\hypertarget{method-y_minus_yhat}{}}}
+\if{html}{\out{<a id="method-GOF_lm_info_extractor-y_minus_yhat"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_lm_info_extractor-y_minus_yhat}{}}}
 \subsection{Method \code{y_minus_yhat()}}{
 see \link{GOF_model_info_extractor}
 \subsection{Usage}{
@@ -67,8 +61,8 @@ see \link{GOF_model_info_extractor}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-beta_x_covariates"></a>}}
-\if{latex}{\out{\hypertarget{method-beta_x_covariates}{}}}
+\if{html}{\out{<a id="method-GOF_lm_info_extractor-beta_x_covariates"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_lm_info_extractor-beta_x_covariates}{}}}
 \subsection{Method \code{beta_x_covariates()}}{
 see \link{GOF_model_info_extractor}
 \subsection{Usage}{
@@ -87,8 +81,8 @@ see \link{GOF_model_info_extractor}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-GOF_lm_info_extractor-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_lm_info_extractor-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

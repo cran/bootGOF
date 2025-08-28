@@ -12,13 +12,13 @@ after the GLM was fitted the distribution of the
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-resample_y}{\code{GOF_glm_sim_param$resample_y()}}
-\item \href{#method-clone}{\code{GOF_glm_sim_param$clone()}}
+\item \href{#method-GOF_glm_sim_param-resample_y}{\code{GOF_glm_sim_param$resample_y()}}
+\item \href{#method-GOF_glm_sim_param-clone}{\code{GOF_glm_sim_param$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-resample_y"></a>}}
-\if{latex}{\out{\hypertarget{method-resample_y}{}}}
+\if{html}{\out{<a id="method-GOF_glm_sim_param-resample_y"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_glm_sim_param-resample_y}{}}}
 \subsection{Method \code{resample_y()}}{
 see \link{GOF_model_simulator}
 \subsection{Usage}{
@@ -37,8 +37,8 @@ see \link{GOF_model_simulator}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-GOF_glm_sim_param-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_glm_sim_param-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

@@ -6,17 +6,20 @@
 \description{
 R6 does not offer interfaces. Hence all methods
 are considered as abstract.
+According to https://roxygen2.r-lib.org/articles/namespace.html#imports
+the R6Class import below is not necessary but we need it to
+get rid of a warning from the CRAN check :-(
 }
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-refit}{\code{GOF_model_trainer$refit()}}
-\item \href{#method-clone}{\code{GOF_model_trainer$clone()}}
+\item \href{#method-GOF_model_trainer-refit}{\code{GOF_model_trainer$refit()}}
+\item \href{#method-GOF_model_trainer-clone}{\code{GOF_model_trainer$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-refit"></a>}}
-\if{latex}{\out{\hypertarget{method-refit}{}}}
+\if{html}{\out{<a id="method-GOF_model_trainer-refit"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_model_trainer-refit}{}}}
 \subsection{Method \code{refit()}}{
 Abstract function refits the model to
   a new data set
@@ -38,8 +41,8 @@ Abstract function refits the model to
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-GOF_model_trainer-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_model_trainer-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

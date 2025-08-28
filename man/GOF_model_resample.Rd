@@ -11,14 +11,14 @@ Class is able to resample model fit, i.e. generate a
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{GOF_model_resample$new()}}
-\item \href{#method-resample}{\code{GOF_model_resample$resample()}}
-\item \href{#method-clone}{\code{GOF_model_resample$clone()}}
+\item \href{#method-GOF_model_resample-new}{\code{GOF_model_resample$new()}}
+\item \href{#method-GOF_model_resample-resample}{\code{GOF_model_resample$resample()}}
+\item \href{#method-GOF_model_resample-clone}{\code{GOF_model_resample$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-GOF_model_resample-new"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_model_resample-new}{}}}
 \subsection{Method \code{new()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{GOF_model_resample$new(gof_model_simulator, gof_model_trainer)}\if{html}{\out{</div>}}
@@ -27,9 +27,11 @@ Class is able to resample model fit, i.e. generate a
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{gof_model_simulator}}{an instance that implements \link{GOF_model_simulator}}
+\item{\code{gof_model_simulator}}{an instance that implements
+\link{GOF_model_simulator}}
 
-\item{\code{gof_model_trainer}}{an instance that implements \link{GOF_model_trainer}}
+\item{\code{gof_model_trainer}}{an instance that implements
+\link{GOF_model_trainer}}
 }
 \if{html}{\out{</div>}}
 }
@@ -38,8 +40,8 @@ No explicit return
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-resample"></a>}}
-\if{latex}{\out{\hypertarget{method-resample}{}}}
+\if{html}{\out{<a id="method-GOF_model_resample-resample"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_model_resample-resample}{}}}
 \subsection{Method \code{resample()}}{
 resamples the dependent variable in \code{data} and refits
   \code{model} to that new data set
@@ -63,8 +65,8 @@ a resampled version of \code{model}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-GOF_model_resample-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_model_resample-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

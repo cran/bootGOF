@@ -12,16 +12,16 @@ This class can test the null hypothesis that data follows
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{GOF_model_test$new()}}
-\item \href{#method-get_Rn1_org}{\code{GOF_model_test$get_Rn1_org()}}
-\item \href{#method-get_Rn1_boot}{\code{GOF_model_test$get_Rn1_boot()}}
-\item \href{#method-get_pvalue}{\code{GOF_model_test$get_pvalue()}}
-\item \href{#method-clone}{\code{GOF_model_test$clone()}}
+\item \href{#method-GOF_model_test-new}{\code{GOF_model_test$new()}}
+\item \href{#method-GOF_model_test-get_Rn1_org}{\code{GOF_model_test$get_Rn1_org()}}
+\item \href{#method-GOF_model_test-get_Rn1_boot}{\code{GOF_model_test$get_Rn1_boot()}}
+\item \href{#method-GOF_model_test-get_pvalue}{\code{GOF_model_test$get_pvalue()}}
+\item \href{#method-GOF_model_test-clone}{\code{GOF_model_test$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-GOF_model_test-new"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_model_test-new}{}}}
 \subsection{Method \code{new()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{GOF_model_test$new(
@@ -67,8 +67,8 @@ An instance of the Class
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get_Rn1_org"></a>}}
-\if{latex}{\out{\hypertarget{method-get_Rn1_org}{}}}
+\if{html}{\out{<a id="method-GOF_model_test-get_Rn1_org"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_model_test-get_Rn1_org}{}}}
 \subsection{Method \code{get_Rn1_org()}}{
 calculates the marked empricial process for \code{model}
 \subsection{Usage}{
@@ -81,8 +81,8 @@ vector ordered by the inner product of the estimated
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get_Rn1_boot"></a>}}
-\if{latex}{\out{\hypertarget{method-get_Rn1_boot}{}}}
+\if{html}{\out{<a id="method-GOF_model_test-get_Rn1_boot"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_model_test-get_Rn1_boot}{}}}
 \subsection{Method \code{get_Rn1_boot()}}{
 calculates the marked empricial process for the
   resampled versions of \code{model}
@@ -97,8 +97,8 @@ list of length \code{nmb_boot_samples} where every element
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get_pvalue"></a>}}
-\if{latex}{\out{\hypertarget{method-get_pvalue}{}}}
+\if{html}{\out{<a id="method-GOF_model_test-get_pvalue"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_model_test-get_pvalue}{}}}
 \subsection{Method \code{get_pvalue()}}{
 p-value for Goodness-of-Fit-test for \code{model}
 \subsection{Usage}{
@@ -111,8 +111,8 @@ p-value for the null hypothesis that the dependent variable
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-GOF_model_test-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_model_test-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

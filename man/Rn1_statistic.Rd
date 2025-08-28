@@ -11,13 +11,13 @@ R6 does not offer interfaces. Hence all methods
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-calc_statistic}{\code{Rn1_statistic$calc_statistic()}}
-\item \href{#method-clone}{\code{Rn1_statistic$clone()}}
+\item \href{#method-Rn1_statistic-calc_statistic}{\code{Rn1_statistic$calc_statistic()}}
+\item \href{#method-Rn1_statistic-clone}{\code{Rn1_statistic$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-calc_statistic"></a>}}
-\if{latex}{\out{\hypertarget{method-calc_statistic}{}}}
+\if{html}{\out{<a id="method-Rn1_statistic-calc_statistic"></a>}}
+\if{latex}{\out{\hypertarget{method-Rn1_statistic-calc_statistic}{}}}
 \subsection{Method \code{calc_statistic()}}{
 Abstract function that calculates the statistic
   for a given marked empirical process
@@ -37,8 +37,8 @@ statistic based on \code{Rn1}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-Rn1_statistic-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Rn1_statistic-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

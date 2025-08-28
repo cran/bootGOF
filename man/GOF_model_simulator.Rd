@@ -10,13 +10,13 @@ R6 does not offer interfaces. Hence all methods
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-resample_y}{\code{GOF_model_simulator$resample_y()}}
-\item \href{#method-clone}{\code{GOF_model_simulator$clone()}}
+\item \href{#method-GOF_model_simulator-resample_y}{\code{GOF_model_simulator$resample_y()}}
+\item \href{#method-GOF_model_simulator-clone}{\code{GOF_model_simulator$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-resample_y"></a>}}
-\if{latex}{\out{\hypertarget{method-resample_y}{}}}
+\if{html}{\out{<a id="method-GOF_model_simulator-resample_y"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_model_simulator-resample_y}{}}}
 \subsection{Method \code{resample_y()}}{
 Abstract function that resamples/generates
   the dependent variable
@@ -37,8 +37,8 @@ generates the dependent variable according to
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-GOF_model_simulator-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GOF_model_simulator-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{
